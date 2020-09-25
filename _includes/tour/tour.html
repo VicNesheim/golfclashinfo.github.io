@@ -1,0 +1,45 @@
+<html>
+    <body>
+        
+        <table>
+            <tr>
+                <th colspan="2">{{ page.tour }}</th>
+            </tr>
+            <tr>
+                <td width="50%" style="text-align: center;"><img src='{{ "/" | relative_url }}assets/images/tours/{{page.nav_order}}-256x256.png'/></td>
+                <td width="50%" style="text-align: left; padding-left: 50px;">
+                    <img src='{{ "/" | relative_url }}assets/images/fee.png' style="width: 20px; height: 20px;"/> Entry Fee: {{ page.fee }}<br/><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/tee/tee-{{ page.tee }}.png' style="width: 20px; height: 20px;"/> Tee Position: {{ page.tee }}<br/><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/wind/wind-tour{{page.nav_order}}.png' style="width: 20px; height: 20px;"/> Wind: {{ page.wind }} mph<br/><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/needle/needle-plus{{page.needle_plus}}.png' style="width: 20px; height: 20px;"/> Needle Speed: +{{ page.needle_plus}}%<br/><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/clan-points.png' style="width: 20px; height: 20px;"/> Clan Points / Win: {{ page.clan_points}}<br/><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/spin-hidden.png' style="width: 20px; height: 20px;"/> Spin: {{ page.spin}}<br/>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="{{page.courses.size}}">
+                    {% if page.courses.size > 1 %}
+                        Courses
+                    {% else %}
+                        Course
+                    {% endif %}
+                </th>
+            </tr>
+            <tr>
+                {% for course in page.courses %}
+                    <td style="text-align: center;">
+                        <b><a href='/courses/{{ course | remove: " "}}.html'>{{ course }}</a></b>
+                        <br/>
+                        <br/>
+                        <a href='/courses/{{ course | remove: " "}}.html'>
+                            <img src='{{ "/" | relative_url }}assets/images/courses/{{ course | remove: " "}}/scenic-thumb.png' style="width: 256px; height: 256px;"/>
+                        </a>
+                    </td> 
+                {% endfor %}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

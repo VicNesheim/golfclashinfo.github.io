@@ -1,0 +1,43 @@
+<html>
+    <body>
+        
+        <table>
+            <tr>
+                <th colspan="3">
+                    {{ page.title }}
+                </th>
+            </tr>
+            <tr>
+                {% for par in page.par %}
+                <td style="text-align: center;">
+                    <b>Hole {{ forloop.index + 1 }} - Par {{ par }}</b><br/>
+                    <img src='{{ "/" | relative_url }}assets/images/courses/{{ page.title | remove: " " }}/{{ forloop.index }}-thumb.png'/>
+                </td>
+                {% assign idx = forloop.index | modulo: 3 %}
+                {% if idx == 0 %}
+            </tr>
+            <tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3">
+                    {% if page.tours.size > 1 %}
+                        Played on Tours
+                    {% else %}
+                        Played on Tour
+                    {% endif %}
+                </th>
+            </tr>
+            <tr>
+                {% for tour in page.tours %}
+                <td style="text-align: center;">
+                    <a href='/tours/Tour{{ tour }}.html'><img src='{{ "/" | relative_url }}assets/images/tours/{{tour}}-256x256.png'/></a>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

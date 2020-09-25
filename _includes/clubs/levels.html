@@ -1,0 +1,606 @@
+{% for club in page.clubs %}
+
+<div class="club-levels">
+    <table>
+        <tr>
+            {% if club[1].type == "common" %}
+            <th colspan="11" class="common-header">
+            {% elsif club[1].type == "rare" %}
+            <th colspan="11" class="rare-header">
+            {% elsif club[1].type == "epic" %}
+            <th colspan="11" class="epic-header">
+            {% else %}
+            <th colspan="11">
+            {% endif %}
+                <img src='{{ "/" | relative_url }}assets/images/clubs/{{club[0]}}-64x64.png' style="width:20px;height:20px; vertical-align: middle;"/>
+                &nbsp;{{ club[1].name }}
+            </th>
+        </tr>
+        <tr>
+            <td style="width:50px;"></td>
+            <td style="width:50px;">1</td>
+            <td style="width:50px;">2</td>
+            <td style="width:50px;">3</td>
+            <td style="width:50px;">4</td>
+            <td style="width:50px;">5</td>
+            <td style="width:50px;">6</td>
+            <td style="width:50px;">7</td>
+            <td style="width:50px;">8</td>
+            <td style="width:50px;">9</td>
+            <td style="width:50px;">10</td>
+        </tr>
+        <tr>
+            <td>Power</td>
+            <td>{{club[1].power[0]}}</td>
+
+            {% if {{club[1].power[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[1]}} > {{club[1].power[0]}} %}
+                    <td class="level-improved">{{club[1].power[1]}}</td>
+                {% else %}
+                    <td>{{club[1].power[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].power[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[2]}} > {{club[1].power[1]}} %}
+                    <td class="level-improved">{{club[1].power[2]}}</td>
+                {% else %}
+                    <td>{{club[1].power[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].power[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[3]}} > {{club[1].power[2]}} %}
+                    <td class="level-improved">{{club[1].power[3]}}</td>
+                {% else %}
+                    <td>{{club[1].power[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].power[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[4]}} > {{club[1].power[3]}} %}
+                    <td class="level-improved">{{club[1].power[4]}}</td>
+                {% else %}
+                    <td>{{club[1].power[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].power[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[5]}} > {{club[1].power[4]}} %}
+                    <td class="level-improved">{{club[1].power[5]}}</td>
+                {% else %}
+                    <td>{{club[1].power[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].power[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[6]}} > {{club[1].power[5]}} %}
+                    <td class="level-improved">{{club[1].power[6]}}</td>
+                {% else %}
+                    <td>{{club[1].power[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].power[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[7]}} > {{club[1].power[6]}} %}
+                    <td class="level-improved">{{club[1].power[7]}}</td>
+                {% else %}
+                    <td>{{club[1].power[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].power[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[8]}} > {{club[1].power[7]}} %}
+                    <td class="level-improved">{{club[1].power[8]}}</td>
+                {% else %}
+                    <td>{{club[1].power[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].power[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].power[9]}} > {{club[1].power[8]}} %}
+                    <td class="level-improved">{{club[1].power[9]}}</td>
+                {% else %}
+                    <td>{{club[1].power[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Accuracy</td>
+            <td>{{club[1].accuracy[0]}}</td>
+
+            {% if {{club[1].accuracy[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[1]}} > {{club[1].accuracy[0]}} %}
+                    <td class="level-improved">{{club[1].accuracy[1]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].accuracy[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[2]}} > {{club[1].accuracy[1]}} %}
+                    <td class="level-improved">{{club[1].accuracy[2]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].accuracy[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[3]}} > {{club[1].accuracy[2]}} %}
+                    <td class="level-improved">{{club[1].accuracy[3]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].accuracy[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[4]}} > {{club[1].accuracy[3]}} %}
+                    <td class="level-improved">{{club[1].accuracy[4]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].accuracy[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[5]}} > {{club[1].accuracy[4]}} %}
+                    <td class="level-improved">{{club[1].accuracy[5]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].accuracy[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[6]}} > {{club[1].accuracy[5]}} %}
+                    <td class="level-improved">{{club[1].accuracy[6]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].accuracy[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[7]}} > {{club[1].accuracy[6]}} %}
+                    <td class="level-improved">{{club[1].accuracy[7]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].accuracy[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[8]}} > {{club[1].accuracy[7]}} %}
+                    <td class="level-improved">{{club[1].accuracy[8]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].accuracy[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].accuracy[9]}} > {{club[1].accuracy[8]}} %}
+                    <td class="level-improved">{{club[1].accuracy[9]}}</td>
+                {% else %}
+                    <td>{{club[1].accuracy[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+        
+        <tr>
+            <td>Topspin</td>
+            <td>{{club[1].topspin[0]}}</td>
+
+            {% if {{club[1].topspin[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[1]}} > {{club[1].topspin[0]}} %}
+                    <td class="level-improved">{{club[1].topspin[1]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].topspin[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[2]}} > {{club[1].topspin[1]}} %}
+                    <td class="level-improved">{{club[1].topspin[2]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].topspin[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[3]}} > {{club[1].topspin[2]}} %}
+                    <td class="level-improved">{{club[1].topspin[3]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].topspin[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[4]}} > {{club[1].topspin[3]}} %}
+                    <td class="level-improved">{{club[1].topspin[4]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].topspin[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[5]}} > {{club[1].topspin[4]}} %}
+                    <td class="level-improved">{{club[1].topspin[5]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].topspin[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[6]}} > {{club[1].topspin[5]}} %}
+                    <td class="level-improved">{{club[1].topspin[6]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].topspin[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[7]}} > {{club[1].topspin[6]}} %}
+                    <td class="level-improved">{{club[1].topspin[7]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].topspin[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[8]}} > {{club[1].topspin[7]}} %}
+                    <td class="level-improved">{{club[1].topspin[8]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].topspin[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].topspin[9]}} > {{club[1].topspin[8]}} %}
+                    <td class="level-improved">{{club[1].topspin[9]}}</td>
+                {% else %}
+                    <td>{{club[1].topspin[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Backspin</td>
+            <td>{{club[1].backspin[0]}}</td>
+
+            {% if {{club[1].backspin[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[1]}} > {{club[1].backspin[0]}} %}
+                    <td class="level-improved">{{club[1].backspin[1]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].backspin[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[2]}} > {{club[1].backspin[1]}} %}
+                    <td class="level-improved">{{club[1].backspin[2]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].backspin[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[3]}} > {{club[1].backspin[2]}} %}
+                    <td class="level-improved">{{club[1].backspin[3]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].backspin[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[4]}} > {{club[1].backspin[3]}} %}
+                    <td class="level-improved">{{club[1].backspin[4]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].backspin[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[5]}} > {{club[1].backspin[4]}} %}
+                    <td class="level-improved">{{club[1].backspin[5]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].backspin[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[6]}} > {{club[1].backspin[5]}} %}
+                    <td class="level-improved">{{club[1].backspin[6]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].backspin[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[7]}} > {{club[1].backspin[6]}} %}
+                    <td class="level-improved">{{club[1].backspin[7]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].backspin[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[8]}} > {{club[1].backspin[7]}} %}
+                    <td class="level-improved">{{club[1].backspin[8]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].backspin[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].backspin[9]}} > {{club[1].backspin[8]}} %}
+                    <td class="level-improved">{{club[1].backspin[9]}}</td>
+                {% else %}
+                    <td>{{club[1].backspin[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Curl</td>
+            <td>{{club[1].curl[0]}}</td>
+
+            {% if {{club[1].curl[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[1]}} > {{club[1].curl[0]}} %}
+                    <td class="level-improved">{{club[1].curl[1]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].curl[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[2]}} > {{club[1].curl[1]}} %}
+                    <td class="level-improved">{{club[1].curl[2]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].curl[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[3]}} > {{club[1].curl[2]}} %}
+                    <td class="level-improved">{{club[1].curl[3]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].curl[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[4]}} > {{club[1].curl[3]}} %}
+                    <td class="level-improved">{{club[1].curl[4]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].curl[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[5]}} > {{club[1].curl[4]}} %}
+                    <td class="level-improved">{{club[1].curl[5]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].curl[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[6]}} > {{club[1].curl[5]}} %}
+                    <td class="level-improved">{{club[1].curl[6]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].curl[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[7]}} > {{club[1].curl[6]}} %}
+                    <td class="level-improved">{{club[1].curl[7]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].curl[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[8]}} > {{club[1].curl[7]}} %}
+                    <td class="level-improved">{{club[1].curl[8]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].curl[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].curl[9]}} > {{club[1].curl[8]}} %}
+                    <td class="level-improved">{{club[1].curl[9]}}</td>
+                {% else %}
+                    <td>{{club[1].curl[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Ballguide</td>
+            <td>{{club[1].ballguide[0]}}</td>
+
+            {% if {{club[1].ballguide[1]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[1]}} > {{club[1].ballguide[0]}} %}
+                    <td class="level-improved">{{club[1].ballguide[1]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[1]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].ballguide[2]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[2]}} > {{club[1].ballguide[1]}} %}
+                    <td class="level-improved">{{club[1].ballguide[2]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[2]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].ballguide[3]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[3]}} > {{club[1].ballguide[2]}} %}
+                    <td class="level-improved">{{club[1].ballguide[3]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[3]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].ballguide[4]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[4]}} > {{club[1].ballguide[3]}} %}
+                    <td class="level-improved">{{club[1].ballguide[4]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[4]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].ballguide[5]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[5]}} > {{club[1].ballguide[4]}} %}
+                    <td class="level-improved">{{club[1].ballguide[5]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[5]}}</td>
+                {% endif %}
+            {% endif %}
+
+            {% if {{club[1].ballguide[6]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[6]}} > {{club[1].ballguide[5]}} %}
+                    <td class="level-improved">{{club[1].ballguide[6]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[6]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].ballguide[7]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[7]}} > {{club[1].ballguide[6]}} %}
+                    <td class="level-improved">{{club[1].ballguide[7]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[7]}}</td>
+                {% endif %}
+            {% endif %}
+            
+            {% if {{club[1].ballguide[8]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[8]}} > {{club[1].ballguide[7]}} %}
+                    <td class="level-improved">{{club[1].ballguide[8]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[8]}}</td>
+                {% endif %}
+            {% endif %}
+        
+            {% if {{club[1].ballguide[9]}} == null %}
+            <td class="level-not-available">x</td>
+            {% else %}
+                {% if {{club[1].ballguide[9]}} > {{club[1].ballguide[8]}} %}
+                    <td class="level-improved">{{club[1].ballguide[9]}}</td>
+                {% else %}
+                    <td>{{club[1].ballguide[9]}}</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+    </table>
+</div>
+{% endfor %}
+
+
+

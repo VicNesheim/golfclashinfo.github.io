@@ -1,0 +1,44 @@
+<html>
+    <body>
+        
+        <table>
+            <tr>
+                <th colspan="3">
+                    {{ page.start }} to {{ page.end }}<br/>
+                    <img src='{{ "/" | relative_url }}assets/images/tournaments/{{ page.title | remove: " " }}.png'/>
+                </th>
+            </tr>
+            <tr>
+                {% for hole in page.holes %}
+                <td style="text-align: center;">
+                    <b><a href='/courses/{{ hole.course | remove: " "}}.html'>{{ hole.course }}</a><br/>
+                    Hole {{ forloop.index + 1 }} - Par {{ hole.par }}</b>
+                    <img src='{{ "/" | relative_url }}assets/images/courses/{{ hole.course | remove: " " }}/{{ hole.hole}}-thumb.png'/>
+                </td>
+                {% assign idx = forloop.index | modulo: 3 %}
+                {% if idx == 0 %}
+            </tr>
+            <tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+        {% if page.notesheets != null %}
+        <table>
+            <tr>
+                <th colspan="2">Tournament Notesheets</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <b>Notesheet (single page)</b><br/>
+                    <a href="{{ page.notesheets.single }}" target="_blank"><img src='{{ "/" | relative_url }}assets/images/notesheets/{{ page.title | remove: " "}}/notesheet_single.png'/></a>
+                </td>
+                <td style="text-align: center;">
+                    <b>Notesheet (3 holes per page)</b><br/>
+                    <a href="{{ page.notesheets.3per }}" target="_blank"><img src='{{ "/" | relative_url }}assets/images/notesheets/{{ page.title | remove: " "}}/notesheet_3per.png'/></a>
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+    </body>
+</html>
